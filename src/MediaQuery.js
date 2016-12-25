@@ -67,6 +67,8 @@
             each(this.handlers, function(handler) {
                 handler.destroy();
             });
+            // Super fast fix =)
+            this.mql = typeof this.mql.currentTarget != 'undefined' ? this.mql.currentTarget : this.mql;
             this.mql.removeListener(this.listener);
             this.handlers.length = 0; //clear array
         },
